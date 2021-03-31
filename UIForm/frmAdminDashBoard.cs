@@ -1,4 +1,5 @@
-﻿using MLSystem.UIForm;
+﻿using MLSystem.Class;
+using MLSystem.UIForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace MLSystem
         {
             InitializeComponent();
         }
+        LoginClass loginClass = new LoginClass();
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -34,6 +36,22 @@ namespace MLSystem
         {
             frmProducts user = new frmProducts();
             user.Show();
+        }
+
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategory cat = new frmCategory();
+            cat.Show();
+        }
+
+        private void frmAdminDashBoard_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

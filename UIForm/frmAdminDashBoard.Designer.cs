@@ -34,6 +34,10 @@
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtLogado = new System.Windows.Forms.Label();
+            this.lbDateTime = new System.Windows.Forms.Label();
+            this.lblLogado = new System.Windows.Forms.Label();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +67,7 @@
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
             this.categoryToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.categoryToolStripMenuItem.Text = "Category";
+            this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // productToolStripMenuItem
             // 
@@ -83,18 +88,63 @@
             this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.historyToolStripMenuItem.Text = "History";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Usuário logado: ";
+            // 
+            // txtLogado
+            // 
+            this.txtLogado.AutoSize = true;
+            this.txtLogado.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogado.Location = new System.Drawing.Point(12, 84);
+            this.txtLogado.Name = "txtLogado";
+            this.txtLogado.Size = new System.Drawing.Size(0, 25);
+            this.txtLogado.TabIndex = 3;
+            // 
+            // lbDateTime
+            // 
+            this.lbDateTime.AutoSize = true;
+            this.lbDateTime.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateTime.Location = new System.Drawing.Point(12, 405);
+            this.lbDateTime.Name = "lbDateTime";
+            this.lbDateTime.Size = new System.Drawing.Size(80, 12);
+            this.lbDateTime.TabIndex = 4;
+            this.lbDateTime.Text = "d/m/Y 00:00:00";
+            // 
+            // lblLogado
+            // 
+            this.lblLogado.AutoSize = true;
+            this.lblLogado.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogado.Location = new System.Drawing.Point(18, 84);
+            this.lblLogado.Name = "lblLogado";
+            this.lblLogado.Size = new System.Drawing.Size(83, 25);
+            this.lblLogado.TabIndex = 5;
+            this.lblLogado.Text = "logado: ";
+            this.lblLogado.Click += new System.EventHandler(this.label2_Click);
+            // 
             // frmAdminDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(866, 453);
+            this.Controls.Add(this.lblLogado);
+            this.Controls.Add(this.lbDateTime);
+            this.Controls.Add(this.txtLogado);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStripTop);
             this.MainMenuStrip = this.menuStripTop;
             this.Name = "frmAdminDashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Painel Admnistraivo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmAdminDashBoard_Load);
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
             this.ResumeLayout(false);
@@ -109,6 +159,10 @@
         private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem storeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtLogado;
+        public System.Windows.Forms.Label lblLogado;
+        public System.Windows.Forms.Label lbDateTime;
     }
 }
 

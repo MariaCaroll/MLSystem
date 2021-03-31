@@ -125,13 +125,18 @@ namespace MLSystem.UIForm
                             {
                                 frmAdminDashBoard admin = new frmAdminDashBoard();
                                 admin.Show();
+                                admin.lblLogado.Text = loginClass.username.ToUpper();
+                                admin.lbDateTime.Text = DateTime.Now.ToString();
                                 this.Hide();
+
+                                
                             }
                             break;
                         case "User":
                             {
                                 frmUserDashbord user = new frmUserDashbord();
                                 user.Show();
+                                
                                 this.Hide();
                             }
                             break;
@@ -149,6 +154,11 @@ namespace MLSystem.UIForm
                 }
 
             }
+
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
