@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MLSystem.Data
 {
-    class UserData
+    class UserDAO
     {
         static String myconnstring = ConfigurationManager.ConnectionStrings["connstring"].ConnectionString;
 

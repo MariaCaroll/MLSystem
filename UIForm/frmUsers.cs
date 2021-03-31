@@ -20,7 +20,7 @@ namespace MLSystem.UIForm
         }
 
         UserClass usuarioClass = new UserClass();
-        UserData usuarioData = new UserData();
+        UserDAO usuarioData = new UserDAO();
 
         
         // inicia a tabela com dados do banco, se estiver vazio não lista nada

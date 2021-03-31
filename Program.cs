@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MLSystem.UIForm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace MLSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAdminDashBoard());
+            Application.Run(new frmLogin());
         }
     }
 }
