@@ -55,6 +55,12 @@
     <Compile Include="UIForm\frmAdminDashBoard.Designer.cs">
       <DependentUpon>frmAdminDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIForm\frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIForm\frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIForm\frmUserDashbord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </Compile>
     <EmbeddedResource Include="UIForm\frmAdminDashBoard.resx">
       <DependentUpon>frmAdminDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIForm\frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIForm\frmUserDashbord.resx">
       <DependentUpon>frmUserDashbord.cs</DependentUpon>

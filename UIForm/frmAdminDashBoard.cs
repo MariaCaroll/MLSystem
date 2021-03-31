@@ -29,5 +29,11 @@ namespace MLSystem
             user.Show();
             
         }
+
+        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducts user = new frmProducts();
+            user.Show();
+        }
     }
 }

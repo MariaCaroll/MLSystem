@@ -68,6 +68,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtPhoneUser = new System.Windows.Forms.MaskedTextBox();
             this.txtCepUser = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblUser)).BeginInit();
@@ -75,7 +76,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -377,6 +378,7 @@
             this.txtPesquisaUser.Name = "txtPesquisaUser";
             this.txtPesquisaUser.Size = new System.Drawing.Size(344, 20);
             this.txtPesquisaUser.TabIndex = 34;
+            this.txtPesquisaUser.TextChanged += new System.EventHandler(this.txtPesquisaUser_TextChanged);
             // 
             // label16
             // 
@@ -390,11 +392,14 @@
             // 
             // tblUser
             // 
+            this.tblUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tblUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblUser.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tblUser.Location = new System.Drawing.Point(467, 105);
             this.tblUser.Name = "tblUser";
             this.tblUser.Size = new System.Drawing.Size(775, 288);
             this.tblUser.TabIndex = 35;
+            this.tblUser.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tblUser_RowHeaderMouseClick);
             // 
             // btnAddUser
             // 
@@ -409,11 +414,12 @@
             // btnAtualizarUser
             // 
             this.btnAtualizarUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizarUser.Image")));
-            this.btnAtualizarUser.Location = new System.Drawing.Point(636, 408);
+            this.btnAtualizarUser.Location = new System.Drawing.Point(1050, 411);
             this.btnAtualizarUser.Name = "btnAtualizarUser";
             this.btnAtualizarUser.Size = new System.Drawing.Size(77, 65);
             this.btnAtualizarUser.TabIndex = 37;
             this.btnAtualizarUser.UseVisualStyleBackColor = true;
+            this.btnAtualizarUser.Click += new System.EventHandler(this.btnAtualizarUser_Click);
             // 
             // btnExcluiUser
             // 
@@ -423,6 +429,7 @@
             this.btnExcluiUser.Size = new System.Drawing.Size(75, 65);
             this.btnExcluiUser.TabIndex = 38;
             this.btnExcluiUser.UseVisualStyleBackColor = true;
+            this.btnExcluiUser.Click += new System.EventHandler(this.btnExcluiUser_Click);
             // 
             // txtEnderecoUser
             // 
@@ -459,12 +466,23 @@
             this.txtCepUser.Size = new System.Drawing.Size(101, 20);
             this.txtCepUser.TabIndex = 42;
             // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(636, 411);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 65);
+            this.button1.TabIndex = 43;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1254, 497);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtCepUser);
             this.Controls.Add(this.txtPhoneUser);
             this.Controls.Add(this.txtEnderecoUser);
@@ -557,5 +575,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.MaskedTextBox txtPhoneUser;
         private System.Windows.Forms.MaskedTextBox txtCepUser;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -182,5 +182,42 @@ namespace MLSystem.Data
             return isSuccess;
         }
         #endregion
+
+        #region Metodo para pesquisar
+        public DataTable Search(string keywords)
+        {
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                String sql = "SELECT * FROM tbUser WHERE id_user LIKE '%" + keywords + "%' or first_name LIKE '%" + keywords + "%' or last_name LIKE '%" + keywords + "%' or username LIKE '%" + keywords + "%'";
+
+             
+
+                // String sql = "SELECT * FROM tbUser WHERE id_user LIKE '%"+ keywords + "%' " +
+                 //   "OR first_name LIKE '%" + keywords + "%'  OR last_name LIKE '%" + keywords + "%' OR username'%" + keywords + "%'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        internal DataTable Search()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
     }
+
+
 }
