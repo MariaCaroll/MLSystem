@@ -32,28 +32,28 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Login = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tblCategoria = new System.Windows.Forms.DataGridView();
+            this.btnLimparr = new System.Windows.Forms.Button();
             this.btnExcluiUser = new System.Windows.Forms.Button();
             this.btnAtualizarUser = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(738, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(757, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 34);
             this.pictureBox1.TabIndex = 0;
@@ -82,22 +82,22 @@
             this.Login.Text = "Cadatro de Categorias";
             this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
-            // txtSenha
+            // txtTitle
             // 
-            this.txtSenha.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(86, 103);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(187, 31);
-            this.txtSenha.TabIndex = 7;
+            this.txtTitle.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(86, 103);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(187, 31);
+            this.txtTitle.TabIndex = 7;
             // 
-            // txtLogin
+            // txtID
             // 
-            this.txtLogin.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(95, 56);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(178, 31);
-            this.txtLogin.TabIndex = 6;
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(95, 56);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(178, 31);
+            this.txtID.TabIndex = 6;
             // 
             // label5
             // 
@@ -120,23 +120,23 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Código";
             // 
-            // textBox1
+            // txtPesquisar
             // 
-            this.textBox1.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(483, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(236, 31);
-            this.textBox1.TabIndex = 11;
+            this.txtPesquisar.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(483, 58);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(236, 31);
+            this.txtPesquisar.TabIndex = 11;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
-            // textBox2
+            // txtDescricao
             // 
-            this.textBox2.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(17, 179);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(239, 134);
-            this.textBox2.TabIndex = 10;
+            this.txtDescricao.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Location = new System.Drawing.Point(17, 179);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(239, 134);
+            this.txtDescricao.TabIndex = 10;
             // 
             // label1
             // 
@@ -158,23 +158,25 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Descricao";
             // 
-            // dataGridView1
+            // tblCategoria
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(293, 103);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(480, 210);
-            this.dataGridView1.TabIndex = 12;
+            this.tblCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblCategoria.Location = new System.Drawing.Point(293, 103);
+            this.tblCategoria.Name = "tblCategoria";
+            this.tblCategoria.Size = new System.Drawing.Size(480, 210);
+            this.tblCategoria.TabIndex = 12;
+            this.tblCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblCategoria_CellContentClick);
+            this.tblCategoria.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tblCategoria_RowHeaderMouseClick);
             // 
-            // button1
+            // btnLimparr
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(138, 353);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 65);
-            this.button1.TabIndex = 47;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLimparr.Image = ((System.Drawing.Image)(resources.GetObject("btnLimparr.Image")));
+            this.btnLimparr.Location = new System.Drawing.Point(138, 353);
+            this.btnLimparr.Name = "btnLimparr";
+            this.btnLimparr.Size = new System.Drawing.Size(77, 65);
+            this.btnLimparr.TabIndex = 47;
+            this.btnLimparr.UseVisualStyleBackColor = true;
+            this.btnLimparr.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnExcluiUser
             // 
@@ -211,17 +213,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 445);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLimparr);
             this.Controls.Add(this.btnExcluiUser);
             this.Controls.Add(this.btnAtualizarUser);
             this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tblCategoria);
+            this.Controls.Add(this.txtPesquisar);
+            this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtLogin);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -229,10 +231,11 @@
             this.Name = "frmCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categorias:";
+            this.Load += new System.EventHandler(this.frmCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,16 +246,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Login;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView tblCategoria;
+        private System.Windows.Forms.Button btnLimparr;
         private System.Windows.Forms.Button btnExcluiUser;
         private System.Windows.Forms.Button btnAtualizarUser;
         private System.Windows.Forms.Button btnAddUser;

@@ -320,5 +320,15 @@ namespace MLSystem.UIForm
         {
             
         }
+
+        private void txtNomeUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tblUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

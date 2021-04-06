@@ -46,12 +46,28 @@ namespace MLSystem
 
         private void frmAdminDashBoard_Load(object sender, EventArgs e)
         {
-           
+            timer2.Start();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbDateTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            DateTime datetime = DateTime.Now;
+            this.lbltime.Text = datetime.ToString();
         }
     }
 }

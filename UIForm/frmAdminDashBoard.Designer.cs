@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,8 +37,12 @@
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLogado = new System.Windows.Forms.Label();
-            this.lbDateTime = new System.Windows.Forms.Label();
             this.lblLogado = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.lbltime = new System.Windows.Forms.Label();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 49);
+            this.label1.Location = new System.Drawing.Point(140, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 25);
             this.label1.TabIndex = 2;
@@ -107,26 +112,52 @@
             this.txtLogado.Size = new System.Drawing.Size(0, 25);
             this.txtLogado.TabIndex = 3;
             // 
-            // lbDateTime
-            // 
-            this.lbDateTime.AutoSize = true;
-            this.lbDateTime.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateTime.Location = new System.Drawing.Point(12, 405);
-            this.lbDateTime.Name = "lbDateTime";
-            this.lbDateTime.Size = new System.Drawing.Size(80, 12);
-            this.lbDateTime.TabIndex = 4;
-            this.lbDateTime.Text = "d/m/Y 00:00:00";
-            // 
             // lblLogado
             // 
             this.lblLogado.AutoSize = true;
-            this.lblLogado.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogado.Location = new System.Drawing.Point(18, 84);
+            this.lblLogado.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogado.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblLogado.Location = new System.Drawing.Point(305, 33);
             this.lblLogado.Name = "lblLogado";
-            this.lblLogado.Size = new System.Drawing.Size(83, 25);
+            this.lblLogado.Size = new System.Drawing.Size(88, 25);
             this.lblLogado.TabIndex = 5;
             this.lblLogado.Text = "logado: ";
             this.lblLogado.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Id: ";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(60, 33);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(42, 25);
+            this.lblID.TabIndex = 7;
+            this.lblID.Text = "Id: ";
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // lbltime
+            // 
+            this.lbltime.AutoSize = true;
+            this.lbltime.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltime.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lbltime.Location = new System.Drawing.Point(745, 41);
+            this.lbltime.Name = "lbltime";
+            this.lbltime.Size = new System.Drawing.Size(109, 16);
+            this.lbltime.TabIndex = 9;
+            this.lbltime.Text = "d/m/Y 00:00:00";
             // 
             // frmAdminDashBoard
             // 
@@ -134,8 +165,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(866, 453);
+            this.Controls.Add(this.lbltime);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblLogado);
-            this.Controls.Add(this.lbDateTime);
             this.Controls.Add(this.txtLogado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStripTop);
@@ -162,7 +195,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtLogado;
         public System.Windows.Forms.Label lblLogado;
-        public System.Windows.Forms.Label lbDateTime;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        public System.Windows.Forms.Label lbltime;
     }
 }
 

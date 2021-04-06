@@ -47,9 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CategoryClass.cs" />
     <Compile Include="Class\LoginClass.cs" />
+    <Compile Include="Class\ProdutoClass.cs" />
     <Compile Include="Class\UserClass.cs" />
+    <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\ProdutoDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="UIForm\frmAdminDashBoard.cs">
       <SubType>Form</SubType>

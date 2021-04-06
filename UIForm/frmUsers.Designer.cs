@@ -156,6 +156,7 @@
             this.txtNomeUser.Name = "txtNomeUser";
             this.txtNomeUser.Size = new System.Drawing.Size(344, 26);
             this.txtNomeUser.TabIndex = 6;
+            this.txtNomeUser.TextChanged += new System.EventHandler(this.txtNomeUser_TextChanged);
             // 
             // txtSobrenomeUser
             // 
@@ -412,6 +413,7 @@
             this.tblUser.Name = "tblUser";
             this.tblUser.Size = new System.Drawing.Size(775, 288);
             this.tblUser.TabIndex = 35;
+            this.tblUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblUser_CellContentClick);
             this.tblUser.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tblUser_RowHeaderMouseClick);
             // 
             // btnAddUser

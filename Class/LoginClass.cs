@@ -8,8 +8,10 @@ namespace MLSystem.Class
 {
     class LoginClass
     {
+        
         public string username { get; set; }
         public string password { get; set; }
         public string type_user { get; set; }
+        public string SessionID { get; }
     }
 }
