@@ -21,7 +21,7 @@ namespace MLSystem.DAO
             DataTable dt = new DataTable();
             try
             {
-                String sql = "SELECT * FROM tbCategories";
+                String sql = "SELECT * FROM tbCategoria";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();
@@ -46,13 +46,13 @@ namespace MLSystem.DAO
             SqlConnection conn = new SqlConnection(myconnstring);
             try
             {
-                String sql = "INSERT INTO tbCategories(title, description, created_date, created_by)" +
-                    "VALUES(@title, @description, @created_date, @created_by)";
+                String sql = "INSERT INTO tbCategoria(nome_categoria, descricao_categoria, data_criacao, criado_por)" +
+                    "VALUES(@nome_categoria, @descricao_categoria, @data_criacao, @criado_por)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@title", categoria.title);
-                cmd.Parameters.AddWithValue("@description", categoria.description);
-                cmd.Parameters.AddWithValue("@created_date", categoria.created_date);
-                cmd.Parameters.AddWithValue("@created_by", categoria.created_by);
+                cmd.Parameters.AddWithValue("@nome_categoria", categoria.nome_categora);
+                cmd.Parameters.AddWithValue("@descricao_categoria", categoria.descricao_categoria);
+                cmd.Parameters.AddWithValue("@data_criacao", categoria.data_criacao);
+                cmd.Parameters.AddWithValue("@criado_por", categoria.criado_por);
                
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -85,13 +85,13 @@ namespace MLSystem.DAO
             SqlConnection conn = new SqlConnection(myconnstring);
             try
             {
-                string sql = "UPDATE tbCategories(title, description, created_date, created_by)" +
-                    "VALUES(@title, @description, @created_date, @created_by)";
+                string sql = "UPDATE tbCategoria(nome_categoria, descricao_categoria, data_criacao, criado_por)" +
+                    "VALUES(@nome_categoria, @descricao_categoria, @data_criacao, @criado_por)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@title", categoria.title);
-                cmd.Parameters.AddWithValue("@description", categoria.description);
-                cmd.Parameters.AddWithValue("@created_date", categoria.created_date);
-                cmd.Parameters.AddWithValue("@created_by", categoria.created_by);
+                cmd.Parameters.AddWithValue("@nome_categoria", categoria.nome_categora);
+                cmd.Parameters.AddWithValue("@descricao_categoria", categoria.descricao_categoria);
+                cmd.Parameters.AddWithValue("@data_criacao", categoria.data_criacao);
+                cmd.Parameters.AddWithValue("@criado_por", categoria.criado_por);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -127,10 +127,10 @@ namespace MLSystem.DAO
             SqlConnection conn = new SqlConnection(myconnstring);
             try
             {
-                string sql = "DELETE FROM tbCategories WHERE id = @id";
+                string sql = "DELETE FROM tbCategoria WHERE id_categoria = @id_categoria";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id" +
-                    "", categoria.id);
+                cmd.Parameters.AddWithValue("@id_categoria" +
+                    "", categoria.id_categoria);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -164,7 +164,7 @@ namespace MLSystem.DAO
             DataTable dt = new DataTable();
             try
             {
-                String sql = "SELECT * FROM tbCategories WHERE id LIKE '%" + keywords + "%' or title LIKE '%" + keywords + "%'";
+                String sql = "SELECT * FROM tbCategoria WHERE id_categoria LIKE '%" + keywords + "%' or nome_categoria LIKE '%" + keywords + "%'";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

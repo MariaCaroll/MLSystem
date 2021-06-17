@@ -1,5 +1,6 @@
 ﻿using MLSystem.Class;
 using MLSystem.DAO;
+using MLSystem.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,12 +21,14 @@ namespace MLSystem.UIForm
         {
             InitializeComponent();
         }
-      // tem que por um metodo apar apegar o id da sessão 
-
+        // tem que por um metodo apar apegar o id da sessão 
+        public static string usuarioConectado;
 
 
         LoginClass loginClass = new LoginClass();
         LoginDAO loginDao = new LoginDAO();
+        UserDAO userDao = new UserDAO();
+        UserClass userClass = new UserClass();
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -52,10 +55,10 @@ namespace MLSystem.UIForm
         }
         private void logar()
         {
-            loginClass.username = txtLogin.Text.Trim();
-            loginClass.password = txtSenha.Text.Trim();
-            loginClass.type_user = rdUser.Text.Trim();
-            loginClass.type_user = rbAdmin.Text.Trim();
+            loginClass.login = txtLogin.Text.Trim();
+            loginClass.senha = txtSenha.Text.Trim();
+            loginClass.tipo_usuario = rdUser.Text.Trim();
+            loginClass.tipo_usuario = rbAdmin.Text.Trim();
 
             if (rdUser.Checked == false && rbAdmin.Checked == false)
             {
@@ -65,11 +68,11 @@ namespace MLSystem.UIForm
             {
                 if (rbAdmin.Checked == true)
                 {
-                    loginClass.type_user = "Admin";
+                    loginClass.tipo_usuario = "Admin";
                 }
                 else
                 {
-                    loginClass.type_user = "User";
+                    loginClass.tipo_usuario = "User";
                 }
             }
 
@@ -78,13 +81,15 @@ namespace MLSystem.UIForm
             if (Success == true)
             {
                 MessageBox.Show("Login efetudado!!");
-                switch (loginClass.type_user)
+                switch (loginClass.tipo_usuario)
                 {
                     case "Admin":
                         {
                             frmAdminDashBoard admin = new frmAdminDashBoard();
                             admin.Show();
-                            admin.lblLogado.Text = loginClass.username.ToUpper();
+                            admin.lblLogado.Text = loginClass.login.ToUpper();
+                            admin.lblID.Text = Convert.ToString(userClass.id_usuario) ;
+
                             this.Hide();
                         }
                         break;
@@ -92,7 +97,7 @@ namespace MLSystem.UIForm
                         {
                             frmUserDashbord user = new frmUserDashbord();
                             user.Show();
-                            user.lblLogado.Text = loginClass.username.ToUpper();
+                            user.lblLogado.Text = loginClass.login.ToUpper();
                             user.lbDateTime.Text = DateTime.Now.ToString();
                             this.Hide();
                         }
@@ -115,6 +120,18 @@ namespace MLSystem.UIForm
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEsquecerSenha_Click(object sender, EventArgs e)
+        {
+            frmLostSenha lost = new frmLostSenha();
+            lost.Show();
+            this.Visible = false;
         }
     }
 }

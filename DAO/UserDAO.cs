@@ -22,7 +22,7 @@ namespace MLSystem.Data
             DataTable dt = new DataTable();
             try
             {
-                String sql = "SELECT * FROM tbUser";
+                String sql = "SELECT * FROM tbUsuario";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();
@@ -47,27 +47,30 @@ namespace MLSystem.Data
             SqlConnection conn = new SqlConnection(myconnstring);
             try
             {
-                String sql = "INSERT INTO tbUser(first_name, last_name, email, username, password, phone," +
-                    " address, denger, user_type, created_date, created_by, zip_code, state, neighborhood, city, number)" +
-                    "VALUES(@first_name, @last_name, @email, @username, @password, @phone, @address, @denger, @user_type, " +
-                    "@created_date, @created_by, @zip_code, @state, @neighborhood, @city, @number)";
+                String sql = "INSERT INTO tbUsuario(nome_usuario, sobrenome_usuario, email_usuario, login, senha, phone_usuario," +
+                    " endereco_usuario, sexo, tipo_usuario, data_criacao, criado_por, cep_usuario, estado_usuario, bairro_usuario," +
+                    " cidade_usuario, numero_usuario, recuperacao_senha, @cpf_usuario)" +
+                    "VALUES(@nome_usuario, @sobrenome_usuario, @email_usuario, @login, @senha, @phone_usuario, @endereco_usuario, @sexo, @tipo_usuario, " +
+                    "@data_criacao, @criado_por, @cep_usuario, @estado_usuario, @bairro_usuario, @cidade_usuario, @numero_usuario, @recuperacao_senha, @cpf_usuario)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@first_name", usuario.first_name);
-                cmd.Parameters.AddWithValue("@last_name", usuario.last_name);
-                cmd.Parameters.AddWithValue("@email", usuario.email);
-                cmd.Parameters.AddWithValue("@username", usuario.username);
-                cmd.Parameters.AddWithValue("@password", usuario.password);
-                cmd.Parameters.AddWithValue("@phone", usuario.phone);
-                cmd.Parameters.AddWithValue("@address", usuario.address);
-                cmd.Parameters.AddWithValue("@denger", usuario.denger);
-                cmd.Parameters.AddWithValue("@user_type", usuario.user_type);
-                cmd.Parameters.AddWithValue("@created_date", usuario.created_date);
-                cmd.Parameters.AddWithValue("@created_by", usuario.created_by);
-                cmd.Parameters.AddWithValue("@zip_code", usuario.zip_code);
-                cmd.Parameters.AddWithValue("@state", usuario.state);
-                cmd.Parameters.AddWithValue("@neighborhood", usuario.neighborhood);
-                cmd.Parameters.AddWithValue("@city", usuario.city);
-                cmd.Parameters.AddWithValue("@number", usuario.number);
+                cmd.Parameters.AddWithValue("@nome_usuario", usuario.nome_usuario);
+                cmd.Parameters.AddWithValue("@sobrenome_usuario", usuario.sobrenome_usuario);
+                cmd.Parameters.AddWithValue("@email_usuario", usuario.email_usuario);
+                cmd.Parameters.AddWithValue("@login", usuario.login);
+                cmd.Parameters.AddWithValue("@senha", usuario.senha);
+                cmd.Parameters.AddWithValue("@phone_usuario", usuario.phone_usuario);
+                cmd.Parameters.AddWithValue("@endereco_usuario", usuario.endereco_usuario);
+                cmd.Parameters.AddWithValue("@sexo", usuario.sexo);
+                cmd.Parameters.AddWithValue("@tipo_usuario", usuario.tipo_usuario);
+                cmd.Parameters.AddWithValue("@data_criacao", usuario.data_criacao);
+                cmd.Parameters.AddWithValue("@criado_por", usuario.criado_por);
+                cmd.Parameters.AddWithValue("@cep_usuario", usuario.cep_usuario);
+                cmd.Parameters.AddWithValue("@estado_usuario", usuario.estado_usuario);
+                cmd.Parameters.AddWithValue("@bairro_usuario", usuario.bairro_usuario);
+                cmd.Parameters.AddWithValue("@cidade_usuario", usuario.cidade_usuario);
+                cmd.Parameters.AddWithValue("@numero_usuario", usuario.numero_usuario);
+                cmd.Parameters.AddWithValue("@cpf_usuario",usuario.cpf_usuario);
+                cmd.Parameters.AddWithValue("@recuperacao_senha", usuario.recuperacao_senha);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -99,28 +102,32 @@ namespace MLSystem.Data
             SqlConnection conn = new SqlConnection(myconnstring);
             try
             {
-                string sql = "UPDATE tbUser SET first_name = @first_name, last_name = @last_name, email = @email, " +
-                    " username = @username, password = @password, phone = @phone, address = @address, denger = @denger," +
-                    " user_type = @user_type, created_date = @created_date, created_by = @created_by, zip_code = @zip_code," +
-                    " state = @state, neighborhood = @neighborhood, city = @city, number = @number WHERE id_user = @id_user";
+                string sql = "UPDATE tbUsuario SET nome_usuario = @nome_usuario, sobrenome_usuario = @sobrenome_usuario, email_usuario = @email_usuario, " +
+                    " login = @login, senha = @senha, phone_usuario = @phone_usuario, endereco_usuario = @endereco_usuario, sexo = @sexo," +
+                    " tipo_usuario = @tipo_usuario, data_criacao = @data_criacao, criado_por = @criado_por, cep_usuario = @cep_usuario," +
+                    " estado_usuario = @estado_usuario, bairro_usuario = @bairro_usuario, cidade_usuario = @cidade_usuario, numero_usuario = @numero_usuario," +
+                    " recuperacao_senha = @recuperacao_senha, cpf_usuario = @cpf_usuario" +
+                    " WHERE id_usuario = @id_usuario";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@first_name", usuario.first_name);
-                cmd.Parameters.AddWithValue("@last_name", usuario.last_name);
-                cmd.Parameters.AddWithValue("@email", usuario.email);
-                cmd.Parameters.AddWithValue("@username", usuario.username);
-                cmd.Parameters.AddWithValue("@password", usuario.password);
-                cmd.Parameters.AddWithValue("@phone", usuario.phone);
-                cmd.Parameters.AddWithValue("@address", usuario.address);
-                cmd.Parameters.AddWithValue("@denger", usuario.denger);
-                cmd.Parameters.AddWithValue("@user_type", usuario.user_type);
-                cmd.Parameters.AddWithValue("@created_date", usuario.created_date);
-                cmd.Parameters.AddWithValue("@created_by", usuario.created_by);
-                cmd.Parameters.AddWithValue("@zip_code", usuario.zip_code);
-                cmd.Parameters.AddWithValue("@state", usuario.state);
-                cmd.Parameters.AddWithValue("@neighborhood", usuario.neighborhood);
-                cmd.Parameters.AddWithValue("@city", usuario.city);
-                cmd.Parameters.AddWithValue("@number", usuario.number);
-                cmd.Parameters.AddWithValue("@id_user", usuario.id_user);
+                cmd.Parameters.AddWithValue("@nome_usuario", usuario.nome_usuario);
+                cmd.Parameters.AddWithValue("@sobrenome_usuario", usuario.sobrenome_usuario);
+                cmd.Parameters.AddWithValue("@email_usuario", usuario.email_usuario);
+                cmd.Parameters.AddWithValue("@login", usuario.login);
+                cmd.Parameters.AddWithValue("@senha", usuario.senha);
+                cmd.Parameters.AddWithValue("@phone_usuario", usuario.phone_usuario);
+                cmd.Parameters.AddWithValue("@endereco_usuario", usuario.endereco_usuario);
+                cmd.Parameters.AddWithValue("@sexo", usuario.sexo);
+                cmd.Parameters.AddWithValue("@tipo_usuario", usuario.tipo_usuario);
+                cmd.Parameters.AddWithValue("@data_criacao", usuario.data_criacao);
+                cmd.Parameters.AddWithValue("@criado_por", usuario.criado_por);
+                cmd.Parameters.AddWithValue("@cep_usuario", usuario.cep_usuario);
+                cmd.Parameters.AddWithValue("@estado_usuario", usuario.estado_usuario);
+                cmd.Parameters.AddWithValue("@bairro_usuario", usuario.bairro_usuario);
+                cmd.Parameters.AddWithValue("@cidade_usuario", usuario.cidade_usuario);
+                cmd.Parameters.AddWithValue("@numero_usuario", usuario.numero_usuario);
+                cmd.Parameters.AddWithValue("@recuperacao_senha", usuario.recuperacao_senha);
+                cmd.Parameters.AddWithValue("@cpf_usuario", usuario.cpf_usuario);
+                cmd.Parameters.AddWithValue("@id_usuario", usuario.id_usuario);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -147,6 +154,7 @@ namespace MLSystem.Data
         }
         #endregion
 
+
         #region Deletar dados do banco 
         public bool Delete(UserClass usuario)
         {
@@ -154,9 +162,9 @@ namespace MLSystem.Data
             SqlConnection conn = new SqlConnection(myconnstring);
             try
             {
-                string sql = "DELETE FROM tbUser WHERE id_user = @id_user";
+                string sql = "DELETE FROM tbUsuario WHERE id_usuario = @id_usuario";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id_user", usuario.id_user);
+                cmd.Parameters.AddWithValue("@id_usuario", usuario.id_usuario);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -190,12 +198,12 @@ namespace MLSystem.Data
             DataTable dt = new DataTable();
             try
             {
-                String sql = "SELECT * FROM tbUser WHERE id_user LIKE '%" + keywords + "%' or first_name LIKE '%" + keywords + "%' or last_name LIKE '%" + keywords + "%' or username LIKE '%" + keywords + "%'";
+                String sql = "SELECT * FROM tbUsuario WHERE id_usuario LIKE '%" + keywords + "%' or nome_usuario LIKE '%" + keywords + "%' or sobrenome_usuario LIKE '%" + keywords + "%' or login LIKE '%" + keywords + "%'";
 
              
 
-                // String sql = "SELECT * FROM tbUser WHERE id_user LIKE '%"+ keywords + "%' " +
-                 //   "OR first_name LIKE '%" + keywords + "%'  OR last_name LIKE '%" + keywords + "%' OR username'%" + keywords + "%'";
+                // String sql = "SELECT * FROM tbUsuario WHERE id_usuario LIKE '%"+ keywords + "%' " +
+                 //   "OR nome_usuario LIKE '%" + keywords + "%'  OR sobrenome_usuario LIKE '%" + keywords + "%' OR login'%" + keywords + "%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();

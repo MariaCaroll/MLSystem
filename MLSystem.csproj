@@ -48,12 +48,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\CategoryClass.cs" />
+    <Compile Include="Class\ClienteClass.cs" />
     <Compile Include="Class\LoginClass.cs" />
     <Compile Include="Class\ProdutoClass.cs" />
+    <Compile Include="Class\RecSenhaClass.cs" />
+    <Compile Include="Class\TransacaoClass.cs" />
+    <Compile Include="Class\TransacaoDetalhesClass.cs" />
     <Compile Include="Class\UserClass.cs" />
     <Compile Include="DAO\CategoryDAO.cs" />
+    <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="DAO\RecSenhaDAO.cs" />
+    <Compile Include="DAO\TransacaoDAO.cs" />
+    <Compile Include="DAO\TransacaoDetalheDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="UIForm\frmAdminDashBoard.cs">
       <SubType>Form</SubType>
@@ -67,17 +75,35 @@
     <Compile Include="UIForm\frmCategory.Designer.cs">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIForm\frmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIForm\frmClient.Designer.cs">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIForm\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UIForm\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIForm\frmLostSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIForm\frmLostSenha.Designer.cs">
+      <DependentUpon>frmLostSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIForm\frmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UIForm\frmProducts.Designer.cs">
       <DependentUpon>frmProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIForm\frmRecSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIForm\frmRecSenha.Designer.cs">
+      <DependentUpon>frmRecSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="UIForm\frmUserDashbord.cs">
       <SubType>Form</SubType>
@@ -93,17 +119,32 @@
     <Compile Include="UIForm\frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIForm\frmVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIForm\frmVendas.Designer.cs">
+      <DependentUpon>frmVendas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UIForm\frmAdminDashBoard.resx">
       <DependentUpon>frmAdminDashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIForm\frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UIForm\frmClient.resx">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UIForm\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UIForm\frmLostSenha.resx">
+      <DependentUpon>frmLostSenha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UIForm\frmProducts.resx">
       <DependentUpon>frmProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIForm\frmRecSenha.resx">
+      <DependentUpon>frmRecSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIForm\frmUserDashbord.resx">
       <DependentUpon>frmUserDashbord.cs</DependentUpon>
@@ -119,6 +160,9 @@
     </Compile>
     <EmbeddedResource Include="UIForm\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIForm\frmVendas.resx">
+      <DependentUpon>frmVendas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

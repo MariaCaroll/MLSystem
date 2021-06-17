@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,35 +51,43 @@
             // 
             this.menuStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userToolStripMenuItem,
+            this.clienteToolStripMenuItem,
             this.categoryToolStripMenuItem,
             this.productToolStripMenuItem,
             this.storeToolStripMenuItem,
             this.historyToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
-            this.menuStripTop.Size = new System.Drawing.Size(866, 24);
+            this.menuStripTop.Size = new System.Drawing.Size(976, 24);
             this.menuStripTop.TabIndex = 1;
             this.menuStripTop.Text = "menuStrip1";
             // 
             // userToolStripMenuItem
             // 
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.userToolStripMenuItem.Text = "User";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.userToolStripMenuItem.Text = "Usuário";
             this.userToolStripMenuItem.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
+            // 
+            // clienteToolStripMenuItem
+            // 
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // categoryToolStripMenuItem
             // 
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.categoryToolStripMenuItem.Text = "Category";
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.categoryToolStripMenuItem.Text = "Categoria";
             this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // productToolStripMenuItem
             // 
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.productToolStripMenuItem.Text = "Product";
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.productToolStripMenuItem.Text = "Produto";
             this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
             // 
             // storeToolStripMenuItem
@@ -153,7 +162,7 @@
             this.lbltime.AutoSize = true;
             this.lbltime.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltime.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lbltime.Location = new System.Drawing.Point(745, 41);
+            this.lbltime.Location = new System.Drawing.Point(867, 33);
             this.lbltime.Name = "lbltime";
             this.lbltime.Size = new System.Drawing.Size(109, 16);
             this.lbltime.TabIndex = 9;
@@ -164,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(866, 453);
+            this.ClientSize = new System.Drawing.Size(976, 453);
             this.Controls.Add(this.lbltime);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label2);
@@ -177,6 +186,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Painel Admnistraivo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdminDashBoard_FormClosed);
             this.Load += new System.EventHandler(this.frmAdminDashBoard_Load);
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
@@ -200,6 +210,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         public System.Windows.Forms.Label lbltime;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
     }
 }
 

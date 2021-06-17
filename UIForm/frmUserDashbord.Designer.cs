@@ -29,45 +29,53 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLogado = new System.Windows.Forms.Label();
             this.lbDateTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.storeToolStripMenuItem,
-            this.vendaToolStripMenuItem,
-            this.historyToolStripMenuItem});
+            this.CompraToolStripMenuItem,
+            this.ToolStripMenuItem,
+            this.clienteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(852, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(992, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // storeToolStripMenuItem
+            // CompraToolStripMenuItem
             // 
-            this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
-            this.storeToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.storeToolStripMenuItem.Text = "Compra";
-            this.storeToolStripMenuItem.Click += new System.EventHandler(this.storeToolStripMenuItem_Click);
+            this.CompraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lojaToolStripMenuItem,
+            this.vendaToolStripMenuItem});
+            this.CompraToolStripMenuItem.Name = "CompraToolStripMenuItem";
+            this.CompraToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.CompraToolStripMenuItem.Text = "Loja";
+            this.CompraToolStripMenuItem.Click += new System.EventHandler(this.storeToolStripMenuItem_Click);
             // 
-            // vendaToolStripMenuItem
+            // ToolStripMenuItem
             // 
-            this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.vendaToolStripMenuItem.Text = "Venda";
+            this.ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estoqueToolStripMenuItem});
+            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.ToolStripMenuItem.Text = "Produto";
             // 
-            // historyToolStripMenuItem
+            // clienteToolStripMenuItem
             // 
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.historyToolStripMenuItem.Text = "Estoque";
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.clienteToolStripMenuItem.Text = "Cliente";
             // 
             // lblLogado
             // 
@@ -102,12 +110,32 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Usuário logado: ";
             // 
+            // lojaToolStripMenuItem
+            // 
+            this.lojaToolStripMenuItem.Name = "lojaToolStripMenuItem";
+            this.lojaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lojaToolStripMenuItem.Text = "Compra";
+            this.lojaToolStripMenuItem.Click += new System.EventHandler(this.lojaToolStripMenuItem_Click);
+            // 
+            // vendaToolStripMenuItem
+            // 
+            this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendaToolStripMenuItem.Text = "Venda";
+            this.vendaToolStripMenuItem.Click += new System.EventHandler(this.vendaToolStripMenuItem_Click);
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estoqueToolStripMenuItem.Text = "Estoque";
+            // 
             // frmUserDashbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(852, 482);
+            this.ClientSize = new System.Drawing.Size(992, 492);
             this.Controls.Add(this.lblLogado);
             this.Controls.Add(this.lbDateTime);
             this.Controls.Add(this.label1);
@@ -116,6 +144,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmUserDashbord";
             this.Text = "frmUserDashbord";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserDashbord_FormClosed);
+            this.Load += new System.EventHandler(this.frmUserDashbord_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -126,11 +156,14 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem storeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
         public System.Windows.Forms.Label lblLogado;
         public System.Windows.Forms.Label lbDateTime;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lojaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
     }
 }

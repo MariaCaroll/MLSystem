@@ -58,14 +58,14 @@ namespace MLSystem.UIForm
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             // pegar o valor inseridos no campo de texto e salvar no bd
-            categoryClass.title = txtTitle.Text;
-            categoryClass.description = txtDescricao.Text;
-            categoryClass.created_date = DateTime.Now;
+            categoryClass.nome_categora = txtTitle.Text;
+            categoryClass.descricao_categoria = txtDescricao.Text;
+            categoryClass.data_criacao = DateTime.Now;
 
 
             //pegar o ID do usuário logado mas não se como
             // por enquanto eu não vou setar o 1 
-            categoryClass.created_by = 1;
+            categoryClass.criado_por = 1;
 
             bool success = categoryDao.Insert(categoryClass);
 
@@ -88,11 +88,11 @@ namespace MLSystem.UIForm
         //metdodo para atualizar a categoria
         private void btnAtualizarUser_Click(object sender, EventArgs e)
         {
-            categoryClass.id = Convert.ToInt32(txtID.Text);
-            categoryClass.title = txtTitle.Text;
-            categoryClass.description = txtDescricao.Text;
-            categoryClass.created_date = DateTime.Now;
-            categoryClass.created_by = 1;
+            categoryClass.id_categoria = Convert.ToInt32(txtID.Text);
+            categoryClass.nome_categora = txtTitle.Text;
+            categoryClass.descricao_categoria = txtDescricao.Text;
+            categoryClass.data_criacao = DateTime.Now;
+            categoryClass.criado_por = 1;
 
 
             bool success = categoryDao.Update(categoryClass);
@@ -116,7 +116,7 @@ namespace MLSystem.UIForm
         // metodo para excluir a categoria
         private void btnExcluiUser_Click(object sender, EventArgs e)
         {
-            categoryClass.id = Convert.ToInt32(txtID.Text);
+            categoryClass.id_categoria = Convert.ToInt32(txtID.Text);
 
             bool success = categoryDao.Delete(categoryClass);
             if (success == true)

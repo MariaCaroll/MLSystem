@@ -8,13 +8,14 @@ namespace MLSystem.Class
 {
     class ProdutoClass
     {
-        public int id_product { get; set; }
-        public String name { get; set; }
-        public String category { get; set; }
-        public String description { get; set; }
-        public String rate { get; set; }
-        public String amt { get; set; }
-        public DateTime created_date { get; set; }
-        public int creeated_by { get; set; }
+        public int id_produto { get; set; }
+        public String nome_produto { get; set; }
+        public String categoria { get; set; }
+        public String descricao { get; set; }
+        public String valor { get; set; }
+        public String quantidade { get; set; }
+        public DateTime data_criacao { get; set; }
+        public int criado_por { get; set; }
+        public String imagem { get; set; }
     }
 }

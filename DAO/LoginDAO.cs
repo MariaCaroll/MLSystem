@@ -25,13 +25,13 @@ namespace MLSystem.DAO
             try
             {
                
-                string sql = "SELECT * FROM tbUser WHERE username = @username AND password = @password AND user_type = @user_type";
+                string sql = "SELECT * FROM tbUsuario WHERE login = @login AND senha = @senha AND tipo_usuario = @tipo_usuario";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                
-                cmd.Parameters.AddWithValue("@username", loginClass.username);
-                cmd.Parameters.AddWithValue("@password", loginClass.password);
-                cmd.Parameters.AddWithValue("@user_type", loginClass.type_user);
-               // cmd.Parameters.AddWithValue("@id_user", loginClass.SessionID);
+                cmd.Parameters.AddWithValue("@login", loginClass.login);
+                cmd.Parameters.AddWithValue("@senha", loginClass.senha);
+                cmd.Parameters.AddWithValue("@tipo_usuario", loginClass.tipo_usuario);
+               // cmd.Parameters.AddWithValue("@id_usuario", loginClass.SessionID);
 
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

@@ -69,6 +69,12 @@
             this.txtPhoneUser = new System.Windows.Forms.MaskedTextBox();
             this.txtCepUser = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.mkCpf = new System.Windows.Forms.MaskedTextBox();
+            this.mkRG = new System.Windows.Forms.MaskedTextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtRecSenha = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblUser)).BeginInit();
@@ -197,7 +203,7 @@
             // txtCidadeUser
             // 
             this.txtCidadeUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidadeUser.Location = new System.Drawing.Point(101, 313);
+            this.txtCidadeUser.Location = new System.Drawing.Point(101, 352);
             this.txtCidadeUser.Name = "txtCidadeUser";
             this.txtCidadeUser.Size = new System.Drawing.Size(335, 26);
             this.txtCidadeUser.TabIndex = 15;
@@ -206,7 +212,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 307);
+            this.label7.Location = new System.Drawing.Point(13, 346);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 25);
             this.label7.TabIndex = 13;
@@ -216,7 +222,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 233);
+            this.label8.Location = new System.Drawing.Point(12, 272);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 25);
             this.label8.TabIndex = 12;
@@ -225,7 +231,7 @@
             // txtLoginUser
             // 
             this.txtLoginUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginUser.Location = new System.Drawing.Point(101, 376);
+            this.txtLoginUser.Location = new System.Drawing.Point(101, 418);
             this.txtLoginUser.Name = "txtLoginUser";
             this.txtLoginUser.Size = new System.Drawing.Size(136, 26);
             this.txtLoginUser.TabIndex = 19;
@@ -233,7 +239,7 @@
             // txtBairroUser
             // 
             this.txtBairroUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairroUser.Location = new System.Drawing.Point(101, 347);
+            this.txtBairroUser.Location = new System.Drawing.Point(101, 386);
             this.txtBairroUser.Name = "txtBairroUser";
             this.txtBairroUser.Size = new System.Drawing.Size(194, 26);
             this.txtBairroUser.TabIndex = 18;
@@ -242,7 +248,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 371);
+            this.label9.Location = new System.Drawing.Point(15, 416);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 25);
             this.label9.TabIndex = 17;
@@ -252,7 +258,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 342);
+            this.label10.Location = new System.Drawing.Point(13, 381);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 25);
             this.label10.TabIndex = 16;
@@ -261,7 +267,7 @@
             // txtSenhaUser
             // 
             this.txtSenhaUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenhaUser.Location = new System.Drawing.Point(325, 377);
+            this.txtSenhaUser.Location = new System.Drawing.Point(325, 419);
             this.txtSenhaUser.Name = "txtSenhaUser";
             this.txtSenhaUser.PasswordChar = '*';
             this.txtSenhaUser.Size = new System.Drawing.Size(110, 26);
@@ -271,7 +277,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 411);
+            this.label11.Location = new System.Drawing.Point(13, 462);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(162, 25);
             this.label11.TabIndex = 21;
@@ -281,7 +287,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(243, 371);
+            this.label12.Location = new System.Drawing.Point(243, 420);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 25);
             this.label12.TabIndex = 20;
@@ -291,7 +297,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(181, 233);
+            this.label13.Location = new System.Drawing.Point(181, 272);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 25);
             this.label13.TabIndex = 24;
@@ -310,7 +316,7 @@
             // txtNumeroUser
             // 
             this.txtNumeroUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroUser.Location = new System.Drawing.Point(352, 347);
+            this.txtNumeroUser.Location = new System.Drawing.Point(352, 386);
             this.txtNumeroUser.Name = "txtNumeroUser";
             this.txtNumeroUser.Size = new System.Drawing.Size(84, 26);
             this.txtNumeroUser.TabIndex = 29;
@@ -319,7 +325,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(305, 341);
+            this.label15.Location = new System.Drawing.Point(305, 380);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 25);
             this.label15.TabIndex = 28;
@@ -332,7 +338,7 @@
             this.cbxTipoUser.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.cbxTipoUser.Location = new System.Drawing.Point(187, 417);
+            this.cbxTipoUser.Location = new System.Drawing.Point(181, 462);
             this.cbxTipoUser.Name = "cbxTipoUser";
             this.cbxTipoUser.Size = new System.Drawing.Size(249, 27);
             this.cbxTipoUser.TabIndex = 30;
@@ -368,7 +374,7 @@
             "SE",
             "TO",
             "DF"});
-            this.cbxUFUser.Location = new System.Drawing.Point(274, 238);
+            this.cbxUFUser.Location = new System.Drawing.Point(274, 277);
             this.cbxUFUser.Name = "cbxUFUser";
             this.cbxUFUser.Size = new System.Drawing.Size(161, 27);
             this.cbxUFUser.TabIndex = 31;
@@ -449,7 +455,7 @@
             // txtEnderecoUser
             // 
             this.txtEnderecoUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnderecoUser.Location = new System.Drawing.Point(118, 278);
+            this.txtEnderecoUser.Location = new System.Drawing.Point(118, 317);
             this.txtEnderecoUser.Name = "txtEnderecoUser";
             this.txtEnderecoUser.Size = new System.Drawing.Size(317, 26);
             this.txtEnderecoUser.TabIndex = 40;
@@ -459,7 +465,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 272);
+            this.label17.Location = new System.Drawing.Point(12, 311);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(103, 25);
             this.label17.TabIndex = 39;
@@ -469,7 +475,7 @@
             // txtPhoneUser
             // 
             this.txtPhoneUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneUser.Location = new System.Drawing.Point(118, 203);
+            this.txtPhoneUser.Location = new System.Drawing.Point(111, 200);
             this.txtPhoneUser.Mask = "(00) 00000-0000";
             this.txtPhoneUser.Name = "txtPhoneUser";
             this.txtPhoneUser.Size = new System.Drawing.Size(127, 26);
@@ -478,8 +484,8 @@
             // txtCepUser
             // 
             this.txtCepUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCepUser.Location = new System.Drawing.Point(74, 238);
-            this.txtCepUser.Mask = "00.000-000";
+            this.txtCepUser.Location = new System.Drawing.Point(74, 277);
+            this.txtCepUser.Mask = "00,000-000";
             this.txtCepUser.Name = "txtCepUser";
             this.txtCepUser.Size = new System.Drawing.Size(101, 26);
             this.txtCepUser.TabIndex = 42;
@@ -494,12 +500,74 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(12, 234);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(52, 25);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "CPF:";
+            // 
+            // mkCpf
+            // 
+            this.mkCpf.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mkCpf.Location = new System.Drawing.Point(73, 236);
+            this.mkCpf.Mask = "000,000,000-00";
+            this.mkCpf.Name = "mkCpf";
+            this.mkCpf.Size = new System.Drawing.Size(158, 26);
+            this.mkCpf.TabIndex = 45;
+            // 
+            // mkRG
+            // 
+            this.mkRG.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mkRG.Location = new System.Drawing.Point(304, 239);
+            this.mkRG.Mask = "00,000,000-0";
+            this.mkRG.Name = "mkRG";
+            this.mkRG.Size = new System.Drawing.Size(131, 26);
+            this.mkRG.TabIndex = 47;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(243, 237);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(44, 25);
+            this.label19.TabIndex = 46;
+            this.label19.Text = "RG:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(15, 508);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(186, 25);
+            this.label20.TabIndex = 49;
+            this.label20.Text = "Recuperar a Senha:";
+            // 
+            // txtRecSenha
+            // 
+            this.txtRecSenha.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRecSenha.Location = new System.Drawing.Point(207, 507);
+            this.txtRecSenha.Name = "txtRecSenha";
+            this.txtRecSenha.Size = new System.Drawing.Size(229, 26);
+            this.txtRecSenha.TabIndex = 50;
+            // 
             // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1254, 497);
+            this.ClientSize = new System.Drawing.Size(1254, 608);
+            this.Controls.Add(this.txtRecSenha);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.mkRG);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.mkCpf);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtCepUser);
             this.Controls.Add(this.txtPhoneUser);
@@ -594,5 +662,11 @@
         private System.Windows.Forms.MaskedTextBox txtPhoneUser;
         private System.Windows.Forms.MaskedTextBox txtCepUser;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.MaskedTextBox mkCpf;
+        private System.Windows.Forms.MaskedTextBox mkRG;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtRecSenha;
     }
 }

@@ -43,30 +43,35 @@ namespace MLSystem.UIForm
             tblUser.Columns[12].HeaderText = "Login";
             tblUser.Columns[13].HeaderText = "Senha";
             tblUser.Columns[14].HeaderText = "Tipo_Usuário";
-            tblUser.Columns[15].HeaderText = "Data_Hora";
-            tblUser.Columns[16].HeaderText = "Cadastrado_Por";
-            
+            tblUser.Columns[15].HeaderText = "Recuperacao";
+            tblUser.Columns[16].HeaderText = "CPF";
+            tblUser.Columns[17].HeaderText = "Data_Hora";
+            tblUser.Columns[18].HeaderText = "Cadastrado_Por";
+           
+
         }
 
         // metodo para adicionar o usuário no banco de dados
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            usuarioClass.first_name = txtNomeUser.Text;
-            usuarioClass.last_name = txtSobrenomeUser.Text;
-            usuarioClass.email = txtEmail.Text;
-            usuarioClass.phone = txtPhoneUser.Text;
-            usuarioClass.denger = cbxSexoUser.Text;
-            usuarioClass.zip_code = txtCepUser.Text;
-            usuarioClass.state = cbxUFUser.Text;
-            usuarioClass.address = txtEnderecoUser.Text;
-            usuarioClass.city = txtCidadeUser.Text;
-            usuarioClass.neighborhood = txtBairroUser.Text;
-            usuarioClass.number = txtNumeroUser.Text;
-            usuarioClass.username = txtLoginUser.Text;
-            usuarioClass.password = txtSenhaUser.Text;
-            usuarioClass.user_type = cbxTipoUser.Text;
-            usuarioClass.created_date = DateTime.Now;
-            usuarioClass.created_by = 1;
+            usuarioClass.nome_usuario = txtNomeUser.Text;
+            usuarioClass.sobrenome_usuario = txtSobrenomeUser.Text;
+            usuarioClass.email_usuario = txtEmail.Text;
+            usuarioClass.phone_usuario = txtPhoneUser.Text;
+            usuarioClass.sexo = cbxSexoUser.Text;
+            usuarioClass.cep_usuario = txtCepUser.Text;
+            usuarioClass.estado_usuario = cbxUFUser.Text;
+            usuarioClass.endereco_usuario = txtEnderecoUser.Text;
+            usuarioClass.cidade_usuario = txtCidadeUser.Text;
+            usuarioClass.bairro_usuario = txtBairroUser.Text;
+            usuarioClass.numero_usuario = txtNumeroUser.Text;
+            usuarioClass.login = txtLoginUser.Text;
+            usuarioClass.senha = txtSenhaUser.Text;
+            usuarioClass.tipo_usuario = cbxTipoUser.Text;
+            usuarioClass.data_criacao = DateTime.Now;
+            usuarioClass.recuperacao_senha = txtRecSenha.Text;
+            usuarioClass.cpf_usuario = mkCpf.Text;
+            usuarioClass.criado_por = 1;
 
             bool success = usuarioData.Insert(usuarioClass);
             if (success == true)
@@ -87,23 +92,25 @@ namespace MLSystem.UIForm
         // atualiza as informações do usuário cadastrado
         private void btnAtualizarUser_Click(object sender, EventArgs e)
         {
-            usuarioClass.id_user = Convert.ToInt32(txtCodigoUser.Text);
-            usuarioClass.first_name = txtNomeUser.Text;
-            usuarioClass.last_name = txtSobrenomeUser.Text;
-            usuarioClass.email = txtEmail.Text;
-            usuarioClass.phone = txtPhoneUser.Text;
-            usuarioClass.denger = cbxSexoUser.Text;
-            usuarioClass.zip_code = txtCepUser.Text;
-            usuarioClass.state = cbxUFUser.Text;
-            usuarioClass.address = txtEnderecoUser.Text;
-            usuarioClass.city = txtCidadeUser.Text;
-            usuarioClass.neighborhood = txtBairroUser.Text;
-            usuarioClass.number = txtNumeroUser.Text;
-            usuarioClass.username = txtLoginUser.Text;
-            usuarioClass.password = txtSenhaUser.Text;
-            usuarioClass.user_type = cbxTipoUser.Text;
-            usuarioClass.created_date = DateTime.Now;
-            usuarioClass.created_by = 1;
+            usuarioClass.id_usuario = Convert.ToInt32(txtCodigoUser.Text);
+            usuarioClass.nome_usuario = txtNomeUser.Text;
+            usuarioClass.sobrenome_usuario = txtSobrenomeUser.Text;
+            usuarioClass.email_usuario = txtEmail.Text;
+            usuarioClass.phone_usuario = txtPhoneUser.Text;
+            usuarioClass.sexo = cbxSexoUser.Text;
+            usuarioClass.cep_usuario = txtCepUser.Text;
+            usuarioClass.estado_usuario = cbxUFUser.Text;
+            usuarioClass.endereco_usuario = txtEnderecoUser.Text;
+            usuarioClass.cidade_usuario = txtCidadeUser.Text;
+            usuarioClass.bairro_usuario = txtBairroUser.Text;
+            usuarioClass.numero_usuario = txtNumeroUser.Text;
+            usuarioClass.login = txtLoginUser.Text;
+            usuarioClass.senha = txtSenhaUser.Text;
+            usuarioClass.tipo_usuario = cbxTipoUser.Text;
+            usuarioClass.data_criacao = DateTime.Now;
+            usuarioClass.recuperacao_senha = txtRecSenha.Text;
+            usuarioClass.cpf_usuario = mkCpf.Text;
+            usuarioClass.criado_por = 1;
 
             bool success = usuarioData.Update(usuarioClass);
             if (success == true)
@@ -124,7 +131,7 @@ namespace MLSystem.UIForm
         // metodo para exluir os dados 
         private void btnExcluiUser_Click(object sender, EventArgs e)
         {
-            usuarioClass.id_user = Convert.ToInt32(txtCodigoUser.Text);
+            usuarioClass.id_usuario = Convert.ToInt32(txtCodigoUser.Text);
                 
             bool success = usuarioData.Delete(usuarioClass);
             if (success == true)
@@ -163,8 +170,11 @@ namespace MLSystem.UIForm
             txtLoginUser.Text = tblUser.Rows[rowIndex].Cells[12].Value.ToString();
             txtSenhaUser.Text = tblUser.Rows[rowIndex].Cells[13].Value.ToString();
             cbxTipoUser.Text = tblUser.Rows[rowIndex].Cells[14].Value.ToString();
+            txtRecSenha.Text = tblUser.Rows[rowIndex].Cells[17].Value.ToString();
+            mkCpf.Text = tblUser.Rows[rowIndex].Cells[18].Value.ToString();
+
             //cbxTipoUser.Text = tblUser.Rows[rowIndex].Cells[15].Value.ToString();
-           // cbxTipoUser.Text = tblUser.Rows[rowIndex].Cells[16].Value.ToString();
+            // cbxTipoUser.Text = tblUser.Rows[rowIndex].Cells[16].Value.ToString();
 
         }
 

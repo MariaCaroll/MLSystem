@@ -20,19 +20,21 @@ namespace MLSystem.UIForm
         }
         ProdutoDAO produtoDao = new ProdutoDAO();
         ProdutoClass produtoClass = new ProdutoClass();
+        public string foto = null;
+
+        // insanciado pra popular o combobox
+        CategoryDAO categoryDao = new CategoryDAO();
+
+   
+        //carrega  a table
+        // popula o compbo bonx
         private void frmProducts_Load(object sender, EventArgs e)
+
         {
-            DataTable dt = produtoDao.Select();
-            
-            tblProduto.DataSource = dt;
-            tblProduto.Columns[0].HeaderText = "ID";
-            tblProduto.Columns[1].HeaderText = "Nome";
-            tblProduto.Columns[2].HeaderText = "Categoria";
-            tblProduto.Columns[3].HeaderText = "Descrição";
-            tblProduto.Columns[4].HeaderText = "valor";
-            tblProduto.Columns[5].HeaderText = "QTD";
-            tblProduto.Columns[6].HeaderText = "Data_Criação";
-            tblProduto.Columns[7].HeaderText = "Criado_Por";
+            // carrega o tabela com os dados do banco 
+            tableLoad();
+            // carrega o combobox com os dados da categoria
+            categorias();
         }
 
         // Ordem do banco de dados [0] = id e assim por diante
@@ -49,16 +51,23 @@ namespace MLSystem.UIForm
             txtQtd.Text = tblProduto.Rows[rowIndex].Cells[5].Value.ToString();
         }
 
+      
+
         //metodo para adicionar produto
         private void btnAddProduto_Click(object sender, EventArgs e)
         {
-            produtoClass.name = txtNome.Text;
-            produtoClass.category = cbCategoria.Text;
-            produtoClass.description = txtDescricao.Text;
-            produtoClass.rate = txtPreco.Text;
-            produtoClass.amt = txtQtd.Text;
-            produtoClass.created_date = DateTime.Now;
-            produtoClass.creeated_by = 1;
+            produtoClass.nome_produto = txtNome.Text;
+            produtoClass.categoria = cbCategoria.Text;
+            produtoClass.descricao = txtDescricao.Text;
+            produtoClass.valor = txtPreco.Text;
+            produtoClass.quantidade = txtQtd.Text;
+            produtoClass.data_criacao = DateTime.Now;
+            produtoClass.criado_por = 1;
+
+            // seria a imagem mas não ta dando
+            /*produtoClass.imagem = Convert.ToString(picture.Image);
+           
+            imagem(); */
 
             bool success = produtoDao.Insert(produtoClass);
             if (success == true)
@@ -83,16 +92,17 @@ namespace MLSystem.UIForm
         //metodo para alterar produto
         private void btnAlterarProduto_Click(object sender, EventArgs e)
         {
-            produtoClass.id_product = Convert.ToInt32(txtCodigo.Text);
-            produtoClass.name = txtNome.Text;
-            produtoClass.category = cbCategoria.Text;
-            produtoClass.description = txtDescricao.Text;
-            produtoClass.rate = txtPreco.Text;
-            produtoClass.amt = txtQtd.Text;
-            produtoClass.created_date = DateTime.Now;
-            produtoClass.creeated_by = 1;
+            produtoClass.id_produto = Convert.ToInt32(txtCodigo.Text);
+            produtoClass.nome_produto = txtNome.Text;
+            produtoClass.categoria = cbCategoria.Text;
+            produtoClass.descricao = txtDescricao.Text;
+            produtoClass.valor = txtPreco.Text;
+            produtoClass.quantidade = txtQtd.Text;
+            produtoClass.data_criacao = DateTime.Now;
+            produtoClass.criado_por = 1;
+            
 
-            bool success = produtoDao.Insert(produtoClass);
+            bool success = produtoDao.Update(produtoClass);
             if (success == true)
             {
                 MessageBox.Show("Produto alterado com Sucesso!!");
@@ -110,7 +120,7 @@ namespace MLSystem.UIForm
         //metodo para excluir produto
         private void btnExluirProduto_Click(object sender, EventArgs e)
         {
-            produtoClass.id_product = Convert.ToInt32(txtCodigo.Text);
+            produtoClass.id_produto = Convert.ToInt32(txtCodigo.Text);
 
             bool success = produtoDao.Delete(produtoClass);
             if (success == true)
@@ -159,6 +169,31 @@ namespace MLSystem.UIForm
             }
         }
 
+        //metodo para carregar a tabela
+        public void tableLoad()
+        {
+            DataTable dt = produtoDao.Select();
+
+            tblProduto.DataSource = dt;
+            tblProduto.Columns[0].HeaderText = "ID";
+            tblProduto.Columns[1].HeaderText = "Nome";
+            tblProduto.Columns[2].HeaderText = "Categoria";
+            tblProduto.Columns[3].HeaderText = "Descrição";
+            tblProduto.Columns[4].HeaderText = "valor";
+            tblProduto.Columns[5].HeaderText = "QTD";
+            tblProduto.Columns[6].HeaderText = "Data_Criação";
+            tblProduto.Columns[7].HeaderText = "Criado_Por";
+        }
+
+        //metodo para popular o combobox da categoria
+        public void categorias()
+        {
+            DataTable categoria = categoryDao.Select();
+            cbCategoria.DataSource = categoria;
+            cbCategoria.DisplayMember = "title";
+            cbCategoria.ValueMember = "title";
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -181,6 +216,29 @@ namespace MLSystem.UIForm
 
         }
 
-       
+        // metodo para procurar a foto ta cert
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            // deu certo
+            OpenFileDialog od = new OpenFileDialog();
+            //outra alternativa
+            if( od.ShowDialog() == DialogResult.OK)
+            {
+                foto = od.FileName;
+                picture.Image = Image.FromFile(od.FileName);
+            }
+
+        
+        }
+
+        // metodoo do bit da imagem
+        public void imagem()
+        {
+            Image img = picture.Image;
+            byte[] arr;
+            ImageConverter convert = new ImageConverter();
+            arr = (byte[])convert.ConvertTo(img, typeof(byte[]));
+                           
+        }
     }
 }

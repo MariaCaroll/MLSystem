@@ -43,6 +43,7 @@
             this.btnlogin = new System.Windows.Forms.Button();
             this.rdUser = new System.Windows.Forms.RadioButton();
             this.rbAdmin = new System.Windows.Forms.RadioButton();
+            this.lblEsquecerSenha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -166,7 +167,7 @@
             this.btnlogin.BackColor = System.Drawing.Color.AliceBlue;
             this.btnlogin.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
-            this.btnlogin.Location = new System.Drawing.Point(334, 389);
+            this.btnlogin.Location = new System.Drawing.Point(346, 422);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(80, 60);
             this.btnlogin.TabIndex = 6;
@@ -195,12 +196,23 @@
             this.rbAdmin.Text = "ADM";
             this.rbAdmin.UseVisualStyleBackColor = true;
             // 
+            // lblEsquecerSenha
+            // 
+            this.lblEsquecerSenha.AutoSize = true;
+            this.lblEsquecerSenha.Location = new System.Drawing.Point(343, 388);
+            this.lblEsquecerSenha.Name = "lblEsquecerSenha";
+            this.lblEsquecerSenha.Size = new System.Drawing.Size(105, 13);
+            this.lblEsquecerSenha.TabIndex = 10;
+            this.lblEsquecerSenha.Text = "Esqueceu a senha ?";
+            this.lblEsquecerSenha.Click += new System.EventHandler(this.lblEsquecerSenha_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(545, 511);
+            this.Controls.Add(this.lblEsquecerSenha);
             this.Controls.Add(this.rdUser);
             this.Controls.Add(this.rbAdmin);
             this.Controls.Add(this.btnlogin);
@@ -213,6 +225,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -239,5 +252,6 @@
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.RadioButton rdUser;
         private System.Windows.Forms.RadioButton rbAdmin;
+        private System.Windows.Forms.Label lblEsquecerSenha;
     }
 }

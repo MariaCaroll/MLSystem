@@ -9,9 +9,9 @@ namespace MLSystem.Class
     class LoginClass
     {
         
-        public string username { get; set; }
-        public string password { get; set; }
-        public string type_user { get; set; }
+        public string login { get; set; }
+        public string senha { get; set; }
+        public string tipo_usuario { get; set; }
         public string SessionID { get; }
     }
 }
